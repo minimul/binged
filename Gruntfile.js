@@ -44,15 +44,15 @@ module.exports = function (grunt) {
                 tasks: ['compass:server', 'clean:main', 'concat:dev']
             },
             crx_auto_reload: {
-              files: ['app/scripts/{,*/}*.js', 'app/templates/{,*/}*.html'],
+              files: ['<%= yeoman.app %>/scripts/{,*/}*.js', '<%= yeoman.app %>/templates/{,*/}*.html'],
               tasks: ['crx_auto_reload']
             }
         },
         crx_auto_reload: {
-          options: {
-            extensionDir: '<%= yeoman.app %>'
-          },
-          default: {}
+            options: {
+              extensionDir: '<%= yeoman.app %>'
+            },
+            default: {}
         },
         connect: {
             options: {
