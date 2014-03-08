@@ -42,7 +42,17 @@ module.exports = function (grunt) {
             compass: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server', 'clean:main', 'concat:dev']
+            },
+            crx_auto_reload: {
+              files: ['app/scripts/{,*/}*.js', 'app/templates/{,*/}*.html'],
+              tasks: ['crx_auto_reload']
             }
+        },
+        crx_auto_reload: {
+          options: {
+            extensionDir: '<%= yeoman.app %>'
+          },
+          default: {}
         },
         connect: {
             options: {
